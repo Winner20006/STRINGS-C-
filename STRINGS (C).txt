@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void generate(char str1[], char str2[],int size)
+{ char str3[size]; 
+ srand(time(NULL));
+  for (int i=0; i<size; i++){ 
+  if(i%2 != 0){
+    str3[i]= str2[rand() %(size-1)]; 
+  }
+  else 
+     str3[i]= str1[rand() %(size-1)];
+  
+  }
+ str3[4]='\0';
+ printf("%s",str3);
+   
+}
+#define size 5
+int main(){
+char str1[size],str2[size];  
+  printf("Enter First word ");
+  scanf("%4s",str1); 
+  printf("Enter second word ");
+    scanf("%4s",str2); 
+  generate( str1,  str2, size);
+  
+     return 0;
+}
